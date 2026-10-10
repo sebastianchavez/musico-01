@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Los Hermanos del Ritmo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+  <section class="relative pt-32 pb-16 px-4 md:px-8 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-overlay"></div>
+    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1518972559570-7cc1309f3229?w=1920&h=800&fit=crop'); background-size: cover; background-position: center; filter: brightness(0.3);"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto text-center animate-fadeInUp">
+      <h1 class="font-display text-5xl md:text-7xl font-bold mb-6">
+        <span class="text-gradient">Contáctanos</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300">
+        Estamos listos para hacer tu evento inolvidable
+      </p>
+    </div>
+  </section>
+
+  <!-- INFO RÁPIDA -->
+  <section class="py-12 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+      <a href="tel:+34612345678" class="card-hover bg-gray-900/50 rounded-xl p-6 text-center reveal">
+        <div class="service-icon mx-auto mb-4">📞</div>
+        <h3 class="font-display text-xl font-bold mb-2">Teléfono</h3>
+        <p class="text-gray-400">+34 612 345 678</p>
+      </a>
+      
+      <a href="mailto:contacto@loshermanosdelritmo.com" class="card-hover bg-gray-900/50 rounded-xl p-6 text-center reveal reveal-delay-1">
+        <div class="service-icon mx-auto mb-4">✉️</div>
+        <h3 class="font-display text-xl font-bold mb-2">Email</h3>
+        <p class="text-gray-400 text-sm">contacto@loshermanosdelritmo.com</p>
+      </a>
+      
+      <a href="https://wa.me/34612345678" target="_blank" class="card-hover bg-gray-900/50 rounded-xl p-6 text-center reveal reveal-delay-2">
+        <div class="service-icon mx-auto mb-4">💬</div>
+        <h3 class="font-display text-xl font-bold mb-2">WhatsApp</h3>
+        <p class="text-gray-400">+34 612 345 678</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FORMULARIO + INFO -->
+  <section class="py-12 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8">
+      <!-- FORMULARIO -->
+      <div class="lg:col-span-2 reveal">
+        <div class="bg-gray-900/50 rounded-2xl p-8 border border-yellow-700/20">
+          <h2 class="font-display text-3xl font-bold mb-2">
+            Solicita tu <span class="text-gradient">presupuesto</span>
+          </h2>
+          <p class="text-gray-400 mb-6">Completa el formulario y te responderemos en menos de 24h</p>
+          
+          <form id="contacto-form" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold mb-2">Nombre completo *</label>
+                <input type="text" name="nombre" class="form-input" placeholder="Tu nombre" required>
+                <div class="error-message">Introduce un nombre válido (mínimo 3 caracteres)</div>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold mb-2">Email *</label>
+                <input type="email" name="email" class="form-input" placeholder="tu@email.com" required>
+                <div class="error-message">Email no válido</div>
+              </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold mb-2">Teléfono</label>
+                <input type="tel" name="telefono" class="form-input" placeholder="+34 600 000 000">
+                <div class="error-message">Teléfono no válido</div>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold mb-2">Tipo de evento *</label>
+                <select name="tipo_evento" class="form-input" required>
+                  <option value="">Selecciona...</option>
+                  <option value="boda">Boda</option>
+                  <option value="cumpleanos">Cumpleaños</option>
+                  <option value="corporativo">Evento corporativo</option>
+                  <option value="festival">Festival / Concierto</option>
+                  <option value="particular">Celebración particular</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold mb-2">Fecha del evento</label>
+                <input type="date" name="fecha_evento" class="form-input">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold mb-2">Presupuesto estimado</label>
+                <select name="presupuesto" class="form-input">
+                  <option value="">Selecciona...</option>
+                  <option value="500-1000">500€ - 1.000€</option>
+                  <option value="1000-2000">1.000€ - 2.000€</option>
+                  <option value="2000-3000">2.000€ - 3.000€</option>
+                  <option value="3000+">Más de 3.000€</option>
+                </select>
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-semibold mb-2">Cuéntanos sobre tu evento *</label>
+              <textarea name="mensaje" rows="5" class="form-input" placeholder="Describe tu evento, número de invitados, lugar, tipo de música que te gustaría..." required></textarea>
+              <div class="error-message">Mensaje demasiado corto (mínimo 10 caracteres)</div>
+            </div>
+            
+            <div class="flex items-start gap-2">
+              <input type="checkbox" id="acepta" required class="mt-1 accent-yellow-600">
+              <label for="acepta" class="text-sm text-gray-400">
+                Acepto la <a href="privacidad.html" class="text-yellow-500 underline">política de privacidad</a> y el tratamiento de mis datos.
+              </label>
+            </div>
+            
+            <button type="submit" class="btn-primary w-full">
+              Enviar solicitud
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- INFO LATERAL -->
+      <div class="space-y-6 reveal reveal-delay-2">
+        <!-- UBICACIÓN -->
+        <div class="bg-gray-900/50 rounded-2xl p-6 border border-yellow-700/20">
+          <h3 class="font-display text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-yellow-500">📍</span> Ubicación
+          </h3>
+          <p id="direccion-texto" class="text-gray-300 mb-4"></p>
+          <p class="text-sm text-gray-400 mb-4 italic">C/ Músicos 42, Madrid</p>
+          
+          <!-- Mapa simulado -->
+          <div class="aspect-video rounded-xl overflow-hidden border border-yellow-700/30 relative bg-gray-800">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <div class="text-4xl mb-2">🗺️</div>
+                <p class="text-sm text-gray-400">Mapa interactivo</p>
+                <p class="text-xs text-gray-500">(Google Maps embed)</p>
+              </div>
+            </div>
+            <iframe 
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-3.7026%2C40.4183%2C-3.6826%2C40.4283&layer=mapnik&marker=40.4233%2C-3.6926" 
+              class="w-full h-full" 
+              style="border:0;" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+        
+        <!-- HORARIOS -->
+        <div class="bg-gray-900/50 rounded-2xl p-6 border border-yellow-700/20">
+          <h3 class="font-display text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-yellow-500">🕒</span> Horarios de Atención
+          </h3>
+          <ul id="horarios-list" class="space-y-3">
+            <!-- Renderizado con JS -->
+          </ul>
+          <div class="mt-4 pt-4 border-t border-gray-800">
+            <p class="text-sm text-gray-400">
+              <strong class="text-yellow-500">Fuera de horario:</strong> Déjanos un mensaje y te contestaremos en horario laboral.
+            </p>
+          </div>
+        </div>
+        
+        <!-- REDES -->
+        <div class="bg-gray-900/50 rounded-2xl p-6 border border-yellow-700/20">
+          <h3 class="font-display text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-yellow-500">🌐</span> Síguenos
+          </h3>
+          <div class="grid grid-cols-2 gap-3" id="redes-contacto">
+            <!-- Renderizado con JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/formulario.js"></script>
+  <script>
+    // Renderizar horarios
+    document.getElementById('horarios-list').innerHTML = BANDA_DATA.horarios.map(h => `
+      <li class="flex justify-between text-sm">
+        <span class="text-gray-300">${h.dia}</span>
+        <span class="text-yellow-500 font-semibold">${h.hora}</span>
+      </li>
+    `).join('');
+    
+    // Renderizar redes
+    document.getElementById('redes-contacto').innerHTML = [
+      { name: 'Instagram', url: BANDA_DATA.redes.instagram, label: 'Instagram' },
+      { name: 'Facebook', url: BANDA_DATA.redes.facebook, label: 'Facebook' },
+      { name: 'YouTube', url: BANDA_DATA.redes.youtube, label: 'YouTube' },
+      { name: 'Spotify', url: BANDA_DATA.redes.spotify, label: 'Spotify' }
+    ].map(r => `
+      <a href="${r.url}" target="_blank" rel="noopener" 
+         class="px-4 py-3 bg-gray-800 hover:bg-yellow-600 rounded-lg text-center text-sm font-semibold transition">
+        ${r.label}
+      </a>
+    `).join('');
+    
+    // Pintar dirección desde data
+    const dirEl = document.getElementById('direccion-texto');
+    if (dirEl) dirEl.textContent = BANDA_DATA.direccion;
+    
+    setTimeout(() => initRevealAnimations(), 100);
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - Los Hermanos del Ritmo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+  <section class="relative pt-32 pb-20 px-4 md:px-8 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-overlay"></div>
+    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1920&h=800&fit=crop'); background-size: cover; background-position: center; filter: brightness(0.3);"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto text-center animate-fadeInUp">
+      <h1 class="font-display text-5xl md:text-7xl font-bold mb-6">
+        Nuestros <span class="text-gradient">Servicios</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300">
+        Música en vivo para cada momento especial
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="py-20 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div id="servicios-container" class="grid md:grid-cols-2 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="py-20 px-4 md:px-8 bg-gradient-musical">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+          ¿Cómo <span class="text-gradient">Trabajamos</span>?
+        </h2>
+        <p class="text-gray-300 text-lg">Un proceso simple y transparente</p>
+      </div>
+      
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="card-hover bg-gray-900/50 rounded-xl p-8 text-center reveal">
+          <div class="text-6xl font-display font-bold text-gradient mb-4">01</div>
+          <h3 class="font-display text-xl font-bold mb-3">Contacto</h3>
+          <p class="text-gray-400 text-sm">Cuéntanos tu evento y tus necesidades</p>
+        </div>
+        
+        <div class="card-hover bg-gray-900/50 rounded-xl p-8 text-center reveal reveal-delay-1">
+          <div class="text-6xl font-display font-bold text-gradient mb-4">02</div>
+          <h3 class="font-display text-xl font-bold mb-3">Presupuesto</h3>
+          <p class="text-gray-400 text-sm">Te enviamos una propuesta personalizada</p>
+        </div>
+        
+        <div class="card-hover bg-gray-900/50 rounded-xl p-8 text-center reveal reveal-delay-2">
+          <div class="text-6xl font-display font-bold text-gradient mb-4">03</div>
+          <h3 class="font-display text-xl font-bold mb-3">Reserva</h3>
+          <p class="text-gray-400 text-sm">Confirmamos la fecha con una señal</p>
+        </div>
+        
+        <div class="card-hover bg-gray-900/50 rounded-xl p-8 text-center reveal reveal-delay-3">
+          <div class="text-6xl font-display font-bold text-gradient mb-4">04</div>
+          <h3 class="font-display text-xl font-bold mb-3">¡Show!</h3>
+          <p class="text-gray-400 text-sm">Disfruta de la mejor música en vivo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-4 md:px-8">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+        ¿Listo para <span class="text-gradient">reservar</span>?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8">
+        Consulta nuestros planes o solicita un presupuesto personalizado
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="precios.html" class="btn-secondary">Ver precios</a>
+        <a href="contacto.html" class="btn-primary">Contactar</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.getElementById('servicios-container').innerHTML = SERVICIOS.map((s, idx) => `
+      <div class="card-hover bg-gray-900/50 rounded-2xl p-8 reveal reveal-delay-${(idx % 4) + 1}">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="service-icon flex-shrink-0">${s.icono}</div>
+          <div>
+            <h3 class="font-display text-2xl font-bold mb-2">${s.titulo}</h3>
+            <p class="text-gray-400">${s.descripcion}</p>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-4 mt-4">
+          <h4 class="text-sm font-semibold text-yellow-500 mb-3 uppercase tracking-wider">Incluye:</h4>
+          <ul class="space-y-2">
+            ${s.incluye.map(item => `
+              <li class="flex items-center gap-2 text-gray-300 text-sm">
+                <span class="text-yellow-500">✓</span> ${item}
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+        <a href="contacto.html" class="btn-secondary mt-6 w-full block">
+          Solicitar info
+        </a>
+      </div>
+    `).join('');
+    
+    setTimeout(() => initRevealAnimations(), 100);
+  </script>
+</body>
+</html>

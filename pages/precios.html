@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precios - Los Hermanos del Ritmo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+  <section class="relative pt-32 pb-20 px-4 md:px-8 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-overlay"></div>
+    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1920&h=800&fit=crop'); background-size: cover; background-position: center; filter: brightness(0.3);"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto text-center animate-fadeInUp">
+      <h1 class="font-display text-5xl md:text-7xl font-bold mb-6">
+        Nuestros <span class="text-gradient">Precios</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300">
+        Planes flexibles adaptados a tus necesidades
+      </p>
+    </div>
+  </section>
+
+  <!-- TOGGLE MENSUAL/ANUAL -->
+  <section class="py-8 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto flex justify-center">
+      <div class="inline-flex items-center bg-gray-900 rounded-full p-1 border border-gray-700">
+        <button id="toggle-evento" class="toggle-btn active px-6 py-2 rounded-full bg-yellow-600 text-black font-semibold transition">
+          Por evento
+        </button>
+        <button id="toggle-pack" class="toggle-btn px-6 py-2 rounded-full text-gray-400 font-semibold transition">
+          Pack anual <span class="text-xs ml-1 text-yellow-500">-15%</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="py-12 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div id="precios-container" class="grid md:grid-cols-3 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- INFO ADICIONAL -->
+  <section class="py-20 px-4 md:px-8 bg-gradient-musical">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+          ¿Tienes algo <span class="text-gradient">diferente</span> en mente?
+        </h2>
+        <p class="text-gray-300 text-lg">
+          Cada evento es único. Solicita un presupuesto personalizado y nos adaptamos a ti.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card-hover bg-gray-900/50 rounded-xl p-8 reveal">
+          <h3 class="font-display text-2xl font-bold mb-4 text-yellow-500">✓ Qué incluye siempre</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-2"><span class="text-yellow-500">•</span> Reunión previa de coordinación</li>
+            <li class="flex gap-2"><span class="text-yellow-500">•</span> Montaje y desmontaje incluido</li>
+            <li class="flex gap-2"><span class="text-yellow-500">•</span> Seguro de responsabilidad civil</li>
+            <li class="flex gap-2"><span class="text-yellow-500">•</span> Asesoramiento musical gratuito</li>
+          </ul>
+        </div>
+        
+        <div class="card-hover bg-gray-900/50 rounded-xl p-8 reveal reveal-delay-1">
+          <h3 class="font-display text-2xl font-bold mb-4 text-yellow-500">⚠ Suplementos posibles</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-2"><span class="text-gray-500">•</span> Desplazamientos &gt; 100km</li>
+            <li class="flex gap-2"><span class="text-gray-500">•</span> Actuaciones en festivos</li>
+            <li class="flex gap-2"><span class="text-gray-500">•</span> Horas extra fuera del plan</li>
+            <li class="flex gap-2"><span class="text-gray-500">•</span> Repertorio muy específico</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-4 md:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+          Preguntas <span class="text-gradient">Frecuentes</span>
+        </h2>
+      </div>
+      
+      <div class="space-y-4">
+        <details class="card-hover bg-gray-900/50 rounded-xl p-6 reveal">
+          <summary class="font-display text-xl font-bold cursor-pointer flex justify-between items-center">
+            ¿Cuánto tiempo de antelación debo reservar?
+            <span class="text-yellow-500 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-300 mt-4">Recomendamos reservar con al menos 3 meses de antelación, especialmente para bodas en temporada alta (mayo-octubre).</p>
+        </details>
+        
+        <details class="card-hover bg-gray-900/50 rounded-xl p-6 reveal reveal-delay-1">
+          <summary class="font-display text-xl font-bold cursor-pointer flex justify-between items-center">
+            ¿Necesito proporcionar algo?
+            <span class="text-yellow-500 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-300 mt-4">Nosotros llevamos todo el equipo. Solo necesitamos un espacio adecuado y, en eventos al aire libre, una toma de corriente cercana.</p>
+        </details>
+        
+        <details class="card-hover bg-gray-900/50 rounded-xl p-6 reveal reveal-delay-2">
+          <summary class="font-display text-xl font-bold cursor-pointer flex justify-between items-center">
+            ¿Puedo elegir las canciones?
+            <span class="text-yellow-500 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-300 mt-4">¡Por supuesto! En los planes Premium y VIP puedes personalizar el repertorio. En el Esencial trabajamos con nuestro repertorio estándar.</p>
+        </details>
+        
+        <details class="card-hover bg-gray-900/50 rounded-xl p-6 reveal reveal-delay-3">
+          <summary class="font-display text-xl font-bold cursor-pointer flex justify-between items-center">
+            ¿Cuál es la política de reembolso?
+            <span class="text-yellow-500 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-300 mt-4">Si cancelas con más de 60 días de antelación, devolvemos el 100% de la señal. Entre 30-60 días, el 50%. Menos de 30 días no es reembolsable.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-4 md:px-8 bg-gradient-musical">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+        ¿Listo para <span class="text-gradient">reservar</span>?
+      </h2>
+      <a href="contacto.html" class="btn-primary text-lg">
+        Solicitar reserva
+      </a>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    let descuentoPack = false;
+    
+    function renderPrecios() {
+      const container = document.getElementById('precios-container');
+      container.innerHTML = PRECIOS.map((p, idx) => {
+        const precio = descuentoPack ? Math.round(p.precio * 0.85) : p.precio;
+        return `
+          <div class="pricing-card rounded-2xl p-8 reveal reveal-delay-${(idx % 3) + 1} ${p.destacado ? 'featured' : ''}">
+            <div class="text-center mb-6">
+              <h3 class="font-display text-2xl font-bold mb-2">${p.nombre}</h3>
+              <p class="text-gray-400 text-sm mb-4">${p.descripcion}</p>
+              <div class="flex items-baseline justify-center gap-1">
+                <span class="text-2xl text-yellow-500">€</span>
+                <span class="text-6xl font-display font-bold">${precio}</span>
+              </div>
+              <p class="text-gray-500 text-sm mt-2">por evento</p>
+            </div>
+            
+            <ul class="space-y-3 mb-8">
+              ${p.caracteristicas.map(c => `
+                <li class="flex items-start gap-2 text-sm">
+                  <span class="${c.incluido ? 'text-yellow-500' : 'text-gray-600'}">${c.incluido ? '✓' : '✕'}</span>
+                  <span class="${c.incluido ? 'text-gray-300' : 'text-gray-600 line-through'}">${c.texto}</span>
+                </li>
+              `).join('')}
+            </ul>
+            
+            <a href="contacto.html" class="${p.destacado ? 'btn-primary' : 'btn-secondary'} w-full block">
+              Contratar
+            </a>
+          </div>
+        `;
+      }).join('');
+      
+      setTimeout(() => initRevealAnimations(), 100);
+    }
+    
+    renderPrecios();
+    
+    // Toggle
+    const btnEvento = document.getElementById('toggle-evento');
+    const btnPack = document.getElementById('toggle-pack');
+    
+    function setActive(activeBtn, inactiveBtn) {
+      activeBtn.classList.add('bg-yellow-600', 'text-black');
+      activeBtn.classList.remove('text-gray-400');
+      inactiveBtn.classList.remove('bg-yellow-600', 'text-black');
+      inactiveBtn.classList.add('text-gray-400');
+    }
+    
+    btnEvento.addEventListener('click', () => {
+      descuentoPack = false;
+      setActive(btnEvento, btnPack);
+      renderPrecios();
+    });
+    
+    btnPack.addEventListener('click', () => {
+      descuentoPack = true;
+      setActive(btnPack, btnEvento);
+      renderPrecios();
+    });
+  </script>
+</body>
+</html>

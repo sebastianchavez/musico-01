@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - Los Hermanos del Ritmo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+  <section class="relative pt-32 pb-20 px-4 md:px-8 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-overlay"></div>
+    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=1920&h=800&fit=crop'); background-size: cover; background-position: center; filter: brightness(0.3);"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto text-center animate-fadeInUp">
+      <h1 class="font-display text-5xl md:text-7xl font-bold mb-6">
+        Nuestra <span class="text-gradient">Galería</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300">
+        Momentos que reflejan nuestra pasión por la música
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="py-8 px-4 md:px-8 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-3">
+      <button class="filter-btn active px-5 py-2 rounded-full border border-yellow-600 bg-yellow-600 text-black font-semibold transition" data-filter="all">
+        Todas
+      </button>
+      <button class="filter-btn px-5 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-yellow-600 hover:text-yellow-500 transition" data-filter="conciertos">
+        Conciertos
+      </button>
+      <button class="filter-btn px-5 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-yellow-600 hover:text-yellow-500 transition" data-filter="eventos">
+        Eventos
+      </button>
+      <button class="filter-btn px-5 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-yellow-600 hover:text-yellow-500 transition" data-filter="estudio">
+        Estudio
+      </button>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="py-12 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div id="galeria-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="py-20 px-4 md:px-8 bg-gradient-musical">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+          Mira nuestro <span class="text-gradient">show en vivo</span>
+        </h2>
+        <p class="text-gray-300 text-lg">Un resumen de nuestro último concierto</p>
+      </div>
+      
+      <div class="aspect-video rounded-2xl overflow-hidden border-2 border-yellow-600/30 reveal">
+        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1280&h=720&fit=crop" 
+             alt="Video de concierto" class="w-full h-full object-cover">
+        <div class="relative -mt-[60%] flex items-center justify-center">
+          <button class="w-20 h-20 rounded-full bg-yellow-600/90 hover:bg-yellow-500 flex items-center justify-center transition transform hover:scale-110">
+            <svg class="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-4 md:px-8">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+        ¿Quieres vivir esta <span class="text-gradient">experiencia</span>?
+      </h2>
+      <a href="contacto.html" class="btn-primary text-lg">
+        Reservar ahora
+      </a>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/galeria.js"></script>
+  <script>
+    // Asignar categorías a las imágenes (rotación simple para demo)
+    const galeriaConCategoria = GALERIA.map((g, idx) => ({
+      ...g,
+      categoria: ['conciertos', 'eventos', 'estudio'][idx % 3]
+    }));
+    
+    renderGaleria(galeriaConCategoria);
+    
+    // Filtros
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        
+        // Actualizar estilos de botones
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('bg-yellow-600', 'text-black');
+          b.classList.add('text-gray-300');
+        });
+        btn.classList.add('bg-yellow-600', 'text-black');
+        btn.classList.remove('text-gray-300');
+        
+        // Filtrar galería
+        const filtered = filter === 'all' 
+          ? galeriaConCategoria 
+          : galeriaConCategoria.filter(g => g.categoria === filter);
+        
+        renderGaleria(filtered);
+      });
+    });
+  </script>
+</body>
+</html>

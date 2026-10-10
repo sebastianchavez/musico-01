@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los Hermanos del Ritmo - Música en vivo</title>
+  <meta name="description" content="Banda de música en vivo para bodas, eventos corporativos y conciertos. Más de 15 años de experiencia.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-overlay"></div>
+    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1920&h=1080&fit=crop'); background-size: cover; background-position: center; filter: brightness(0.4);"></div>
+    
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+      <div class="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-600/40 bg-yellow-900/10 backdrop-blur-sm animate-fadeIn">
+        <div class="flex items-end h-5">
+          <span class="equalizer-bar"></span>
+          <span class="equalizer-bar"></span>
+          <span class="equalizer-bar"></span>
+          <span class="equalizer-bar"></span>
+          <span class="equalizer-bar"></span>
+        </div>
+        <span class="text-yellow-400 text-sm font-semibold tracking-wider">MÚSICA EN VIVO</span>
+      </div>
+      
+      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-6 animate-fadeInUp">
+        <span class="text-gradient">Los Hermanos</span><br>
+        <span class="text-white">del Ritmo</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fadeInUp" style="animation-delay: 0.2s;">
+        Donde la música cobra vida. 15 años llenando escenarios con la mejor fusión de rock, blues y jazz latino.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fadeInUp" style="animation-delay: 0.4s;">
+        <a href="pages/contacto.html" class="btn-primary pulse-gold">
+          Reservar fecha
+        </a>
+        <a href="pages/galeria.html" class="btn-secondary">
+          Ver galería
+        </a>
+      </div>
+      
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16 animate-fadeInUp" style="animation-delay: 0.6s;">
+        <div>
+          <div class="text-4xl md:text-5xl font-display font-bold text-gradient">15+</div>
+          <div class="text-gray-400 text-sm md:text-base">Años de experiencia</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-display font-bold text-gradient">500+</div>
+          <div class="text-gray-400 text-sm md:text-base">Eventos realizados</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-display font-bold text-gradient">5</div>
+          <div class="text-gray-400 text-sm md:text-base">Integrantes</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fadeIn" style="animation-delay: 1s;">
+      <div class="w-6 h-10 border-2 border-yellow-500 rounded-full flex justify-center pt-2">
+        <div class="w-1 h-3 bg-yellow-500 rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRÓXIMOS EVENTOS -->
+  <section class="py-20 px-4 md:px-8 bg-gradient-musical">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">
+          Próximos <span class="text-gradient">Conciertos</span>
+        </h2>
+        <p class="text-gray-400 text-lg">No te pierdas ninguno de nuestros shows</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="eventos-container">
+        <!-- Renderizado con JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS - Preview -->
+  <section class="py-20 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+          Una banda con <span class="text-gradient">historia</span>
+        </h2>
+        <p class="text-gray-300 text-lg mb-6">
+          Nacimos en 2009 en un pequeño garaje de Madrid. Hoy somos una de las bandas más sólidas del panorama nacional, con más de 500 eventos a nuestras espaldas y un sonido único que fusiona rock, blues y jazz latino.
+        </p>
+        <p class="text-gray-300 mb-8">
+          Cinco integrantes, una pasión: hacer que cada actuación sea única e inolvidable.
+        </p>
+        <a href="pages/sobre-nosotros.html" class="btn-primary">
+          Conoce nuestra historia
+        </a>
+      </div>
+      
+      <div class="relative reveal reveal-delay-2">
+        <div class="aspect-square rounded-2xl overflow-hidden border-2 border-yellow-600/30 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=600&fit=crop" 
+               alt="Banda en concierto" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-yellow-600 text-black p-6 rounded-xl shadow-2xl">
+          <div class="text-4xl font-display font-bold">2009</div>
+          <div class="text-sm font-semibold">Año de fundación</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS - Preview -->
+  <section class="py-20 px-4 md:px-8 bg-gradient-musical">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">
+          Nuestros <span class="text-gradient">Servicios</span>
+        </h2>
+        <p class="text-gray-400 text-lg">Soluciones musicales para cada ocasión</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicios-preview"></div>
+      
+      <div class="text-center mt-12 reveal">
+        <a href="pages/servicios.html" class="btn-secondary">
+          Ver todos los servicios →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="py-20 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">
+          Lo que dicen <span class="text-gradient">nuestros clientes</span>
+        </h2>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6" id="testimonios-container"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-4 md:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-yellow-900/30 via-black to-yellow-900/30"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+      <h2 class="font-display text-4xl md:text-6xl font-bold mb-6">
+        ¿Listo para tu próximo <span class="text-gradient">evento</span>?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8">
+        Reserva tu fecha y hagamos algo inolvidable juntos
+      </p>
+      <a href="pages/contacto.html" class="btn-primary text-lg">
+        Contactar ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Renderizar eventos
+    document.getElementById('eventos-container').innerHTML = EVENTOS.map((ev, idx) => `
+      <div class="card-hover bg-gray-900/50 rounded-xl p-6 reveal reveal-delay-${(idx % 4) + 1}">
+        <div class="text-yellow-500 font-bold text-sm tracking-wider mb-2">${ev.fecha}</div>
+        <h3 class="font-display text-xl font-bold mb-2">${ev.titulo}</h3>
+        <p class="text-gray-400 text-sm mb-1">📍 ${ev.lugar}</p>
+        <p class="text-gray-400 text-sm mb-3">🕒 ${ev.hora}</p>
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+          ev.estado === 'Privado' ? 'bg-gray-700 text-gray-300' :
+          ev.estado === 'Casi agotado' ? 'bg-red-900/40 text-red-300 border border-red-700/50' :
+          'bg-yellow-900/40 text-yellow-300 border border-yellow-700/50'
+        }">${ev.estado}</span>
+      </div>
+    `).join('');
+
+    // Renderizar servicios (solo los 3 primeros en preview)
+    document.getElementById('servicios-preview').innerHTML = SERVICIOS.slice(0, 3).map((s, idx) => `
+      <div class="card-hover bg-gray-900/50 rounded-xl p-8 reveal reveal-delay-${(idx % 3) + 1}">
+        <div class="service-icon mb-4">${s.icono}</div>
+        <h3 class="font-display text-2xl font-bold mb-3">${s.titulo}</h3>
+        <p class="text-gray-400">${s.descripcion}</p>
+      </div>
+    `).join('');
+
+    // Renderizar testimonios
+    document.getElementById('testimonios-container').innerHTML = TESTIMONIOS.map((t, idx) => `
+      <div class="card-hover bg-gray-900/50 rounded-xl p-8 reveal reveal-delay-${(idx % 3) + 1}">
+        <div class="text-yellow-500 text-3xl mb-4">"</div>
+        <p class="text-gray-300 mb-6 italic">${t.texto}</p>
+        <div class="flex items-center gap-3">
+          <img src="${t.avatar}" alt="${t.nombre}" class="w-12 h-12 rounded-full object-cover border-2 border-yellow-600">
+          <div>
+            <div class="font-semibold">${t.nombre}</div>
+            <div class="text-yellow-500 text-sm">${t.evento}</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    
+    // Re-inicializar animaciones después del render
+    setTimeout(() => initRevealAnimations(), 100);
+  </script>
+</body>
+</html>
