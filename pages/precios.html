@@ -25,14 +25,14 @@
     </div>
   </section>
 
-  <!-- TOGGLE MENSUAL/ANUAL -->
-  <section class="py-8 px-4 md:px-8">
+  <!-- MODALIDAD DE CONTRATACIÓN -->
+  <section class="pricing-controls py-8 px-4 md:px-8">
     <div class="max-w-7xl mx-auto flex justify-center">
-      <div class="inline-flex items-center bg-gray-900 rounded-full p-1 border border-gray-700">
-        <button id="toggle-evento" class="toggle-btn active px-6 py-2 rounded-full bg-yellow-600 text-black font-semibold transition">
+      <div class="pricing-toggle inline-flex items-center bg-gray-900 rounded-full p-1 border border-gray-700">
+        <button id="toggle-evento" type="button" aria-pressed="true" class="toggle-btn active px-6 py-2 rounded-full bg-yellow-600 text-black font-semibold transition">
           Por evento
         </button>
-        <button id="toggle-pack" class="toggle-btn px-6 py-2 rounded-full text-gray-400 font-semibold transition">
+        <button id="toggle-pack" type="button" aria-pressed="false" class="toggle-btn px-6 py-2 rounded-full text-gray-400 font-semibold transition">
           Pack anual <span class="text-xs ml-1 text-yellow-500">-15%</span>
         </button>
       </div>
@@ -42,7 +42,8 @@
   <!-- PRECIOS -->
   <section class="py-12 px-4 md:px-8">
     <div class="max-w-7xl mx-auto">
-      <div id="precios-container" class="grid md:grid-cols-3 gap-8"></div>
+      <p class="text-center text-gray-400 text-sm mb-8">Valores referenciales en pesos chilenos (CLP). Solicita una cotización final para tu evento.</p>
+      <div id="precios-container" class="grid lg:grid-cols-3 gap-8"></div>
     </div>
   </section>
 
@@ -97,7 +98,7 @@
             ¿Cuánto tiempo de antelación debo reservar?
             <span class="text-yellow-500 text-2xl">+</span>
           </summary>
-          <p class="text-gray-300 mt-4">Recomendamos reservar con al menos 3 meses de antelación, especialmente para bodas en temporada alta (mayo-octubre).</p>
+          <p class="text-gray-300 mt-4">Recomendamos reservar con al menos 3 meses de antelación, especialmente para bodas en temporada alta (noviembre-marzo).</p>
         </details>
         
         <details class="card-hover bg-gray-900/50 rounded-xl p-6 reveal reveal-delay-1">
@@ -145,6 +146,9 @@
   <script src="../assets/js/components.js"></script>
   <script src="../assets/js/main.js"></script>
   <script>
+    const formatoCLP = new Intl.NumberFormat('es-CL', {
+      style: 'currency', currency: 'CLP', maximumFractionDigits: 0
+    });
     let descuentoPack = false;
     
     function renderPrecios() {
@@ -156,11 +160,8 @@
             <div class="text-center mb-6">
               <h3 class="font-display text-2xl font-bold mb-2">${p.nombre}</h3>
               <p class="text-gray-400 text-sm mb-4">${p.descripcion}</p>
-              <div class="flex items-baseline justify-center gap-1">
-                <span class="text-2xl text-yellow-500">€</span>
-                <span class="text-6xl font-display font-bold">${precio}</span>
-              </div>
-              <p class="text-gray-500 text-sm mt-2">por evento</p>
+              <div class="pricing-amount font-display font-bold">${formatoCLP.format(precio)}</div>
+              <p class="text-gray-400 text-sm mt-2">CLP por evento${descuentoPack ? " · pack anual (-15%)" : ""}</p>
             </div>
             
             <ul class="space-y-3 mb-8">
@@ -189,6 +190,8 @@
     const btnPack = document.getElementById('toggle-pack');
     
     function setActive(activeBtn, inactiveBtn) {
+      activeBtn.setAttribute('aria-pressed', 'true');
+      inactiveBtn.setAttribute('aria-pressed', 'false');
       activeBtn.classList.add('bg-yellow-600', 'text-black');
       activeBtn.classList.remove('text-gray-400');
       inactiveBtn.classList.remove('bg-yellow-600', 'text-black');

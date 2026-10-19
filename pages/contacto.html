@@ -28,22 +28,22 @@
   <!-- INFO RÁPIDA -->
   <section class="py-12 px-4 md:px-8">
     <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-      <a href="tel:+34612345678" class="card-hover bg-gray-900/50 rounded-xl p-6 text-center reveal">
+      <a href="tel:+56912345678" class="card-hover bg-gray-900/50 rounded-xl p-6 text-center reveal">
         <div class="service-icon mx-auto mb-4">📞</div>
         <h3 class="font-display text-xl font-bold mb-2">Teléfono</h3>
-        <p class="text-gray-400">+34 612 345 678</p>
+        <p class="text-gray-400">+56 9 1234 5678</p>
       </a>
       
-      <a href="mailto:contacto@loshermanosdelritmo.com" class="card-hover bg-gray-900/50 rounded-xl p-6 text-center reveal reveal-delay-1">
+      <a href="mailto:contacto@loshermanosdelritmo.cl" class="card-hover bg-gray-900/50 rounded-xl p-6 text-center reveal reveal-delay-1">
         <div class="service-icon mx-auto mb-4">✉️</div>
         <h3 class="font-display text-xl font-bold mb-2">Email</h3>
-        <p class="text-gray-400 text-sm">contacto@loshermanosdelritmo.com</p>
+        <p class="text-gray-400 text-sm">contacto@loshermanosdelritmo.cl</p>
       </a>
       
-      <a href="https://wa.me/34612345678" target="_blank" class="card-hover bg-gray-900/50 rounded-xl p-6 text-center reveal reveal-delay-2">
+      <a href="https://wa.me/56912345678" target="_blank" class="card-hover bg-gray-900/50 rounded-xl p-6 text-center reveal reveal-delay-2">
         <div class="service-icon mx-auto mb-4">💬</div>
         <h3 class="font-display text-xl font-bold mb-2">WhatsApp</h3>
-        <p class="text-gray-400">+34 612 345 678</p>
+        <p class="text-gray-400">+56 9 1234 5678</p>
       </a>
     </div>
   </section>
@@ -76,7 +76,7 @@
             <div class="grid md:grid-cols-2 gap-5">
               <div>
                 <label class="block text-sm font-semibold mb-2">Teléfono</label>
-                <input type="tel" name="telefono" class="form-input" placeholder="+34 600 000 000">
+                <input type="tel" name="telefono" class="form-input" placeholder="+56 9 1234 5678">
                 <div class="error-message">Teléfono no válido</div>
               </div>
               <div>
@@ -102,10 +102,10 @@
                 <label class="block text-sm font-semibold mb-2">Presupuesto estimado</label>
                 <select name="presupuesto" class="form-input">
                   <option value="">Selecciona...</option>
-                  <option value="500-1000">500€ - 1.000€</option>
-                  <option value="1000-2000">1.000€ - 2.000€</option>
-                  <option value="2000-3000">2.000€ - 3.000€</option>
-                  <option value="3000+">Más de 3.000€</option>
+                  <option value="500000-1000000">$500.000 - $1.000.000 CLP</option>
+                  <option value="1000000-2000000">$1.000.000 - $2.000.000 CLP</option>
+                  <option value="2000000-3000000">$2.000.000 - $3.000.000 CLP</option>
+                  <option value="3000000+">Más de $3.000.000 CLP</option>
                 </select>
               </div>
             </div>
@@ -138,30 +138,18 @@
             <span class="text-yellow-500">📍</span> Ubicación
           </h3>
           <p id="direccion-texto" class="text-gray-300 mb-4"></p>
-          <p class="text-sm text-gray-400 mb-4 italic">C/ Músicos 42, Madrid</p>
+          <p class="text-sm text-gray-400 mb-4 italic">Atención en Santiago y eventos en regiones previa coordinación.</p>
           
-          <!-- Mapa simulado -->
-          <div class="aspect-video rounded-xl overflow-hidden border border-yellow-700/30 relative bg-gray-800">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="text-center">
-                <div class="text-4xl mb-2">🗺️</div>
-                <p class="text-sm text-gray-400">Mapa interactivo</p>
-                <p class="text-xs text-gray-500">(Google Maps embed)</p>
-              </div>
-            </div>
-            <iframe 
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-3.7026%2C40.4183%2C-3.6826%2C40.4283&layer=mapnik&marker=40.4233%2C-3.6926" 
-              class="w-full h-full" 
-              style="border:0;" 
-              loading="lazy">
-            </iframe>
+          <div class="aspect-video rounded-xl overflow-hidden border border-yellow-700/30 bg-gray-800">
+            <iframe id="contacto-mapa" title="Ubicación de referencia en Providencia, Santiago de Chile"
+              class="w-full h-full" style="border:0;" loading="lazy"></iframe>
           </div>
         </div>
         
         <!-- HORARIOS -->
         <div class="bg-gray-900/50 rounded-2xl p-6 border border-yellow-700/20">
           <h3 class="font-display text-xl font-bold mb-4 flex items-center gap-2">
-            <span class="text-yellow-500">🕒</span> Horarios de Atención
+            <span class="text-yellow-500">🕒</span> Horarios de Atención (Chile)
           </h3>
           <ul id="horarios-list" class="space-y-3">
             <!-- Renderizado con JS -->
@@ -193,9 +181,11 @@
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/formulario.js"></script>
   <script>
+    document.getElementById('contacto-mapa').src = BANDA_DATA.ubicacion.mapaEmbed;
+
     // Renderizar horarios
     document.getElementById('horarios-list').innerHTML = BANDA_DATA.horarios.map(h => `
-      <li class="flex justify-between text-sm">
+      <li class="flex flex-wrap justify-between gap-x-4 gap-y-1 text-sm">
         <span class="text-gray-300">${h.dia}</span>
         <span class="text-yellow-500 font-semibold">${h.hora}</span>
       </li>

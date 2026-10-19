@@ -6,10 +6,10 @@ const BANDA_DATA = {
   nombre: 'Los Hermanos del Ritmo',
   eslogan: 'Donde la música cobra vida',
   descripcionCorta: 'Más de 15 años llenando escenarios con la mejor fusión de rock, blues y jazz latino.',
-  email: 'contacto@loshermanosdelritmo.com',
-  telefono: '+34 612 345 678',
-  whatsapp: '+34612345678',
-  direccion: 'Calle de los Músicos 42, 28004 Madrid, España',
+  email: 'contacto@loshermanosdelritmo.cl',
+  telefono: '+56 9 1234 5678',
+  whatsapp: '+56912345678',
+  direccion: 'Providencia, Santiago, Región Metropolitana, Chile',
   horarios: [
     { dia: 'Lunes a Viernes', hora: '10:00 - 20:00' },
     { dia: 'Sábados', hora: '12:00 - 18:00' },
@@ -23,9 +23,9 @@ const BANDA_DATA = {
     tiktok: 'https://tiktok.com/@loshermanosdelritmo'
   },
   ubicacion: {
-    lat: 40.4233,
-    lng: -3.6926,
-    mapaEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.9!2d-3.6926!3d40.4233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDI1JzIzLjkiTiAzwrDQnDMnJzMuNiJX!5e0!3m2!1ses!2ses!4v1234567890'
+    lat: -33.4314,
+    lng: -70.6093,
+    mapaEmbed: 'https://www.openstreetmap.org/export/embed.html?bbox=-70.6293%2C-33.4414%2C-70.5893%2C-33.4214&layer=mapnik&marker=-33.4314%2C-70.6093'
   }
 };
 
@@ -45,7 +45,7 @@ const INTEGRANTES = [
   {
     nombre: 'María Sánchez',
     rol: 'Bajista y voz secundaria',
-    bio: 'Única mujer en la formación. Aporta groove y elegancia. Graduada en el Conservatorio de Madrid.',
+    bio: 'Única mujer en la formación. Aporta groove y elegancia. Graduada en el Conservatorio de Santiago.',
     imagen: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop'
   },
   {
@@ -104,7 +104,7 @@ const SERVICIOS = [
 const PRECIOS = [
   {
     nombre: 'Plan Esencial',
-    precio: '650',
+    precio: 650000,
     descripcion: 'Ideal para eventos íntimos',
     destacado: false,
     caracteristicas: [
@@ -119,7 +119,7 @@ const PRECIOS = [
   },
   {
     nombre: 'Plan Premium',
-    precio: '1.450',
+    precio: 1450000,
     descripcion: 'El más solicitado',
     destacado: true,
     caracteristicas: [
@@ -134,7 +134,7 @@ const PRECIOS = [
   },
   {
     nombre: 'Plan VIP',
-    precio: '2.950',
+    precio: 2950000,
     descripcion: 'Experiencia completa',
     destacado: false,
     caracteristicas: [
@@ -167,29 +167,29 @@ const GALERIA = [
 const EVENTOS = [
   {
     fecha: '15 NOV 2026',
-    titulo: 'Festival de Otoño Madrid',
-    lugar: 'Auditorio al aire libre, Madrid',
+    titulo: 'Festival de Primavera Santiago',
+    lugar: 'Auditorio al aire libre, Santiago',
     hora: '21:00',
     estado: 'Entradas disponibles'
   },
   {
     fecha: '22 NOV 2026',
     titulo: 'Noche de Jazz & Blues',
-    lugar: 'Sala Clamores, Madrid',
+    lugar: 'Sala de conciertos, Santiago',
     hora: '22:30',
     estado: 'Casi agotado'
   },
   {
     fecha: '05 DIC 2026',
     titulo: 'Concierto Benéfico',
-    lugar: 'Teatro Principal, Valencia',
+    lugar: 'Teatro, Valparaíso',
     hora: '20:00',
     estado: 'Entradas disponibles'
   },
   {
     fecha: '24 DIC 2026',
     titulo: 'Gala de Navidad',
-    lugar: 'Hotel Palace, Madrid',
+    lugar: 'Hotel, Santiago',
     hora: '21:00',
     estado: 'Privado'
   }
@@ -203,7 +203,7 @@ const TESTIMONIOS = [
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop'
   },
   {
-    nombre: 'Empresa TechMadrid',
+    nombre: 'Empresa TechSantiago',
     evento: 'Evento corporativo · Marzo 2026',
     texto: 'Profesionalidad absoluta. Adaptaron su repertorio a nuestra marca y el resultado fue espectacular.',
     avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop'
@@ -220,7 +220,7 @@ const HISTORIA = [
   {
     año: '2009',
     titulo: 'Los inicios',
-    descripcion: 'Carlos y Diego Ramírez forman la banda en un pequeño garaje de Madrid. Sus primeras actuaciones son en bares locales.'
+    descripcion: 'Carlos y Diego Ramírez forman la banda en un pequeño garaje de Santiago. Sus primeras actuaciones son en bares locales.'
   },
   {
     año: '2013',
@@ -230,7 +230,7 @@ const HISTORIA = [
   {
     año: '2017',
     titulo: 'Gira nacional',
-    descripcion: 'Más de 50 conciertos por toda España. Reconocidos como "Revelación Musical" por la revista Sonido.'
+    descripcion: 'Más de 50 conciertos por todo Chile. Reconocidos como "Revelación Musical" por la revista Sonido.'
   },
   {
     año: '2020',
@@ -245,6 +245,6 @@ const HISTORIA = [
   {
     año: '2026',
     titulo: '15º aniversario',
-    descripcion: 'Celebran 15 años con una gira especial por los mejores escenarios de España y Latinoamérica.'
+    descripcion: 'Celebran 15 años con una gira especial por los mejores escenarios de Chile y Latinoamérica.'
   }
 ];

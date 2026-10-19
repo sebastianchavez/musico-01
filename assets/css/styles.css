@@ -434,73 +434,145 @@ h1, h2, h3, h4, .font-display {
   transform: translateX(0);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    top: 64px;
-    right: -100%;
-    width: 80%;
-    max-width: 320px;
-    height: calc(100vh - 64px);
-    background-color: rgba(5, 5, 5, 0.98);
-    backdrop-filter: blur(12px);
-    flex-direction: column;
-    padding: 2rem;
-    transition: right 0.4s ease;
-    border-left: 1px solid rgba(212, 175, 55, 0.2);
-  }
-
-  .nav-menu.open {
-    right: 0;
-  }
-
-  .nav-menu .nav-link {
-    padding: 1rem 0;
-    font-size: 1.125rem;
-  }
+/* Navigation: one breakpoint for the links, booking button and menu toggle. */
+.nav-menu {
+  display: flex;
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
-  flex-direction: column;
+  flex-shrink: 0;
   cursor: pointer;
-  width: 30px;
-  height: 24px;
+  width: 44px;
+  height: 44px;
   position: relative;
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 0.5rem;
 }
 
 .hamburger span {
   display: block;
-  height: 3px;
-  width: 100%;
+  height: 2px;
+  width: 24px;
+  left: 9px;
   background-color: var(--color-primary);
   border-radius: 3px;
   position: absolute;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 10px; }
-.hamburger span:nth-child(3) { top: 20px; }
+.hamburger span:nth-child(1) { top: 13px; }
+.hamburger span:nth-child(2) { top: 20px; }
+.hamburger span:nth-child(3) { top: 27px; }
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.hamburger.active span:nth-child(1) {
-  top: 10px;
-  transform: rotate(45deg);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  top: 10px;
-  transform: rotate(-45deg);
+.hamburger:focus-visible,
+.nav-link:focus-visible,
+.toggle-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
 }
 
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+.pricing-amount {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.2;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+}
+
+.pricing-toggle {
+  max-width: 100%;
+}
+
+.toggle-btn {
+  min-height: 44px;
+}
+
+footer a,
+footer li,
+a[href^="mailto:"] {
+  overflow-wrap: anywhere;
+}
+
+.form-input {
+  min-width: 0;
+  font-size: 1rem;
+  color-scheme: dark;
+}
+
+@media (max-width: 1023px) {
+  .hamburger { display: block; }
+
+  .navbar-fixed .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100dvh - 76px);
+    overflow-y: auto;
+    background-color: #0a0a0a;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.75rem 1.5rem 1.25rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.5);
   }
+
+  .navbar-fixed .nav-menu.open { display: flex; }
+
+  .nav-menu .nav-link {
+    padding: 0.875rem 0;
+    font-size: 1.0625rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-link::after { bottom: 0; }
+}
+
+@media (max-width: 767px) {
+  h1.font-display {
+    font-size: clamp(2.25rem, 9vw, 3rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  h2.font-display {
+    font-size: clamp(1.75rem, 7.5vw, 2.25rem);
+    line-height: 1.2;
+  }
+
+  section.pt-32 {
+    padding-top: 8rem;
+    padding-bottom: 2.5rem;
+  }
+
+  section.py-20 { padding-block: 3rem; }
+  section.py-12 { padding-block: 1.5rem; }
+  .pricing-controls { padding-block: 1.5rem 0.5rem; }
+  .pricing-toggle { width: 100%; max-width: 24rem; }
+  .pricing-toggle .toggle-btn {
+    flex: 1;
+    padding-inline: 0.75rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+  .pricing-card.p-8,
+  .rounded-2xl.p-8,
+  .card-hover.p-8 { padding: 1.5rem; }
+  .pricing-amount { font-size: clamp(2rem, 10vw, 3rem); }
+
+  section.min-h-screen {
+    min-height: 100svh;
+    padding-block: 8rem 6rem;
+  }
+  section.min-h-screen .grid-cols-3 { gap: 0.75rem; margin-top: 2.5rem; }
+  section.min-h-screen .text-xl { font-size: 1.0625rem; }
+  .toast { left: 1rem; right: 1rem; bottom: 1rem; }
 }
 
 /* Audio player visual */

@@ -106,8 +106,12 @@ Todas las imágenes son de Unsplash vía URL. Reemplaza las URLs en:
 
 ## 📞 Datos Mockeados
 
-La banda de ejemplo se llama **"Los Hermanos del Ritmo"**, una banda de Madrid con 5 integrantes (rock/blues/jazz latino) y más de 15 años de experiencia.
+La banda de ejemplo se llama **"Los Hermanos del Ritmo"**, una banda de Santiago de Chile con 5 integrantes (rock/blues/jazz latino) y más de 15 años de experiencia.
 
 ## 📄 Licencia
 
 Template de uso libre para proyectos comerciales y personales.
+
+### Datos de ejemplo para Chile
+
+Los precios están expresados en CLP y son referenciales: $650.000, $1.450.000 y $2.950.000 por evento. El descuento del pack anual es del 15%. El teléfono +56 9 1234 5678, correo y ubicación en Providencia son datos de demostración; reemplázalos por los del negocio antes de publicar. Los datos principales se encuentran en `assets/js/data.js`; los enlaces directos de contacto también están en `pages/contacto.html`.

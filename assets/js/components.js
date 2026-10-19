@@ -20,7 +20,7 @@ function buildNavbar(activePage = '') {
   const basePath = inPages ? '../' : '';
   
   return `
-    <nav class="navbar-fixed fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4">
+    <nav aria-label="Navegación principal" class="navbar-fixed fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
         <a href="${basePath}index.html" class="flex items-center gap-2 group">
           <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-300 flex items-center justify-center font-bold text-black text-xl">
@@ -32,7 +32,7 @@ function buildNavbar(activePage = '') {
           </div>
         </a>
         
-        <div class="nav-menu hidden md:flex items-center gap-8">
+        <div id="main-menu" class="nav-menu items-center gap-8">
           ${NAV_ITEMS.map(item => `
             <a href="${basePath}${item.href}" class="nav-link text-white font-medium">
               ${item.label}
@@ -41,14 +41,14 @@ function buildNavbar(activePage = '') {
         </div>
         
         <div class="flex items-center gap-4">
-          <a href="${basePath}pages/contacto.html" class="hidden md:inline-block btn-primary text-sm px-5 py-2">
+          <a href="${basePath}pages/contacto.html" class="hidden lg:inline-block btn-primary text-sm px-5 py-2">
             Reservar
           </a>
-          <div class="hamburger md:hidden">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <button type="button" class="hamburger" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     </nav>
@@ -74,7 +74,7 @@ function buildFooter() {
               </div>
             </div>
             <p class="text-gray-400 max-w-md mb-6">
-              Más de 15 años llevando la mejor música en vivo a escenarios, bodas y eventos corporativos de toda España.
+              Más de 15 años llevando la mejor música en vivo a escenarios, bodas y eventos corporativos de todo Chile.
             </p>
             <div class="flex gap-3">
               ${[

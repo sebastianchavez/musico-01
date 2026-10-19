@@ -7,20 +7,32 @@ function initMobileMenu() {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
   
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('open');
-    });
+  if (!hamburger || !navMenu) return;
 
-    // Cerrar menú al hacer clic en un enlace
-    document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('open');
-      });
-    });
+  function setOpen(open) {
+    hamburger.classList.toggle('active', open);
+    navMenu.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
   }
+
+  hamburger.addEventListener('click', () => {
+    setOpen(hamburger.getAttribute('aria-expanded') !== 'true');
+  });
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navMenu.classList.contains('open')) {
+      setOpen(false);
+      hamburger.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.navbar-fixed')) setOpen(false);
+  });
+  const desktop = window.matchMedia('(min-width: 1024px)');
+  desktop.addEventListener('change', () => setOpen(false));
 }
 
 // Navbar scroll effect
@@ -62,8 +74,9 @@ function highlightActiveNav() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    if (href.split('/').pop() === currentPath) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
   });
 }
